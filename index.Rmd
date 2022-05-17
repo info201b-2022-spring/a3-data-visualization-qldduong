@@ -1,0 +1,69 @@
+---
+title: "a3-index"
+author: "Quang Lucas Duong"
+date: '2022-05-13'
+output: html_document
+---
+
+```{r setup, include=FALSE, echo = FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library("tidyverse")
+library("dplyr")
+library("ggplot2")
+library("maps")
+library("mapproj")
+```
+
+
+#####################################################################################
+
+```{r echo = FALSE}
+source("analysis.R") # Gives access to the variables created in the analysis.R file 
+
+library(knitr)
+
+```
+
+# Investigating the incarceration_trends dataset
+
+### Introduction to A3
+The incarceration_trends dataset reports county-level data on admissions/discharges in jails and prisons all throughout the US from 1970 to 2018. The dataset is divided up based on categories like region, race, gender, and federal agency. Using those categories, my analysis centers on how factors like race or location affect the rates of incarceration for different groups of people. Discussing the intersection between racial prejudice and incarceration practices is extremely relevant, as minorities (especially racial groups like Black people) are still incarcerated at disproportionately high rates. Furthermore, just two years ago, George Floyd's death at the hands of the police sparked the most protest-heavy year in American history. Continued study of the corrupt and deeply unequal criminal justice system is vital in this age of COVID, racial awareness, and ongoing advocacy for equity for all.
+<br />
+<br />
+
+### Summary information
+
+<!--# Which region incarcerates the largest proportion of its Black population
+# Which states did the BIA arrest the most people in in 2018
+# Which state hast the highest average black prison population rate
+# Which county (on average) do Latinx people make up the largest proportion of the prison population
+# In 2015, in which urbanicity did AAPI people make up the largest proportion of total prison admissions-->
+
+In messing around with and exploring this dataset, I've pulled five values of interest out of it. First, the region that incarcerates the largest proportion of the Black people ages 15-64 who live there (avg over time) is `r region_highest_black_jail_rate`. Second, I wanted to know in which state the Bureau of Indian Affairs (BIA) was putting the most people in jail in 2018: that state is `r state_highest_bia`. Then, I wanted to know which state in which the average Black prison population grows the fastest, and I found it to be `r state_highest_black_rate_avg`. From there, I wanted to know in which county do Latinx people make up the largest proportion of the prison population, and found it to be `r county_highest_latinx_prop`. 100% of the people in prison there are Latinx! Finally, in the spirit of AAPI Heritage Month, I wanted to see in which urbanicity level do AAPI admissions make up the largest proportion of total admission. In 2015, The answer to that question was `r aapi_urban_max`.
+
+<br />
+<br />
+
+### Below are some of charts I created while working with the data
+
+### Chart 1:
+```{r echo = FALSE}
+black_prop_graph
+```
+<br />
+<br />
+
+### Chart 2:
+Note that the proportion of people in prison that are Black is significantly larger than the proportion of Black people out of the total population.
+```{r echo = FALSE}
+new_pop_graph
+```
+<br />
+<br />
+
+### Chart 3: (Note: Grey states have no data)
+```{r echo = FALSE}
+map_vis
+```
+
+
