@@ -7,8 +7,8 @@
 
 
 
-# incarc_trends_data <- read.csv("https://raw.githubusercontent.com/vera-institute/incarceration-trends/master/incarceration_trends.csv")
-incarc_trends_data <- read.csv("C:/Users/tduon/a3-data-visualization-qldduong/incarceration_trends.csv")
+incarc_trends_data <- read.csv("https://raw.githubusercontent.com/vera-institute/incarceration-trends/master/incarceration_trends.csv")
+# incarc_trends_data <- read.csv("C:/Users/tduon/a3-data-visualization-qldduong/incarceration_trends.csv")
 
 
 # Variables of choice:
